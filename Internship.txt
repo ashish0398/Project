@@ -1,0 +1,33 @@
+System Requirement Specification (SRS)
+Technlology Used
+Diagrams:
+* Use Case Diagram
+* Activity Diagram
+* Class Diagram (only if OOP is used)
+* ER Diagram (not necessary if OOP is used and Class Diagram is already there)
+* Module Hierarchy (Incase of module of a bigger project, show where your module exists in the system)
+
+System Name: Helping-Hands
+
+Definition: 
+			This system will help offer services digitally for NGO's, NGO's can accept donations and help required parties with the whatever they can help. NGO's can raise the request for help, and any civilian who is willing to help can accept the request and help however it can help.
+			
+System Requirement Specification(SRS):
+	Functional requirement:
+		
+		Registration Page: User must register itself to become the member. It has two options which are register as NGO member or register as civilian.
+			Registration page stores users Full Name, Age, Contact No., User-Name, Password, Email address, Current Address, Permanent Address, NGO member's identity proof if register as NGO member.
+			Stores all the registeration details into database.
+
+		Login Page: For existing user, User must login with its User-Name and Password.
+					Login details will get verify from the database to  authenticate.
+					
+		Raising request: NGO member raise request if they need any help.
+						 Civilian can create request if it willingly wants to donate.
+							
+		Accepting request: NGO can accept the request of donation in any form e.g., Cash, Cheque, Cloth, Food, etc.
+						   Civilian can accept the request and donate in any form e.g., Cash, Cheque, Cloth, Food, etc.
+							
+		
+		
+	Non Functional requirement:
