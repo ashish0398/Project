@@ -1,33 +1,89 @@
 System Requirement Specification (SRS)
-Technlology Used
+Technology Used
 Diagrams:
-* Use Case Diagram
-* Activity Diagram
-* Class Diagram (only if OOP is used)
-* ER Diagram (not necessary if OOP is used and Class Diagram is already there)
-* Module Hierarchy (Incase of module of a bigger project, show where your module exists in the system)
+	* Use Case Diagram
+	* Activity Diagram
+	* Class Diagram (only if OOP is used)
+	* ER Diagram (not necessary if OOP is used and Class Diagram is already there)
+	* Module Hierarchy (Incase of module of a bigger project, show where your module exists in the system)
 
 System Name: Helping-Hands
 
 Definition: 
-			This system will help offer services digitally for NGO's, NGO's can accept donations and help required parties with the whatever they can help. NGO's can raise the request for help, and any civilian who is willing to help can accept the request and help however it can help.
+			This system will help offer services digitally for NGO's, NGO's can accept donations and help required parties with the whatever they can help. NGO's can raise the request for help, and any end-user who is willing to help can accept the request and help however it can help.
 			
 System Requirement Specification(SRS):
 	Functional requirement:
 		
-		Registration Page: User must register itself to become the member. It has two options which are register as NGO member or register as civilian.
+		Registration Page: User must register itself to become the member. It has two options which are register as NGO or register as end-user.
 			Registration page stores users Full Name, Age, Contact No., User-Name, Password, Email address, Current Address, Permanent Address, NGO member's identity proof if register as NGO member.
-			Stores all the registeration details into database.
+			Stores all the registration details into database.
 
 		Login Page: For existing user, User must login with its User-Name and Password.
 					Login details will get verify from the database to  authenticate.
 					
-		Raising request: NGO member raise request if they need any help.
-						 Civilian can create request if it willingly wants to donate.
+		Raising notification: NGO member raise help for the donation.
+						 	  End-user can read the help as a notification.
 							
-		Accepting request: NGO can accept the request of donation in any form e.g., Cash, Cheque, Cloth, Food, etc.
-						   Civilian can accept the request and donate in any form e.g., Cash, Cheque, Cloth, Food, etc.
+		Accepting donation: NGO can accept the donation in the form of a Payment, Cloth, Food, etc.
+						   	End-user can read the notification and donate in form of a Payment, Cloth, Food, etc.
 							
+		Confirmation of donation: Whenever someone makes a donation, NGO's will be notify.
 		
+		Record of donation: All donation done by end-user or received by NGO member their record will be stored in database.
+	
+		Feedback: Feedback of donation will be shared to user.
 		
 	Non Functional requirement:
+		Accessability: To access the system, user must need to have a proper internet connectivity, user's system must have browser.
+
+		Performance: To offer a smooth user experience of the system, system must have to handle various operations at the same time.
+
+		Scalability: System must be respond properly with the increasing number of of users and must be able to handle as many as users it can.
+
+		Availability: System must be available 24*7, so users can access the system any time.
+
+		Privacy and Security: The system should ensure that the privacy of user's data is not compromised. 
+
+
+	Stakeholders of the system:
+		Administrator: In this system, NGO is the administrator of the system. It owns the system. NGO has full access of the system. It has all the access of read and write the notifications in the system.
+
+		End-User: End-User is any common user who is register to the system as a member. It has the access of read the notification of generated in the system and it has access to make a donation.
+
+	Classes of the system:
+		Name: Registration
+		Attribute: user_id, Name, DOB, Email, Contact, Age, Current Address, Permanent Address, username, password, identity proof.
+		Method: register_user()
+
+		Name: Login
+		Attribute: username, password.
+		Method: NGO_login(), member_login()
+
+		Name: NGO
+		Attribute: username, password.
+		Method: add_NGO(), modify_NGO(), deactivate_NGO()
+
+		Name: Member
+		Attribute: username, password.
+		Method: add_member(), modify_member(), deactivate_member()
+		
+		Name: Document
+		Attribute: Doc_id, Doc_type, Holders_Name, Issued_date, Expiry_date
+		Method: add_document(), modify_document(), verify_document()
+
+		Name: Two-Step Verification
+		Attribute: Email, OTP
+		Method: generate_otp()
+		
+		Name: Help
+		Attribute: generate notification, close notification.
+		Method: raise_help(), fold_help()
+
+		Name: Donation
+		Attribute: Donar name, Donation type, Donation date & time.
+		Method: donate(), donation_receipt(), donation_notification()
+
+		Name: Feedback
+		Attribute: username, description.
+		Method: add_feedback()
