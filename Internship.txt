@@ -66,11 +66,11 @@ System Requirement Specification(SRS):
 
 		Name: Member
 		Attribute: username, password.
-		Method: add_member(), modify_member(), deactivate_member()
+		Method: modify_member(), deactivate_member()
 		
 		Name: Document
 		Attribute: Doc_id, Doc_type, Holders_Name, Issued_date, Expiry_date
-		Method: add_document(), modify_document(), verify_document()
+		Method: add_document(), modify_document(), delete_document()
 
 		Name: Two-Step Verification
 		Attribute: Email, OTP
